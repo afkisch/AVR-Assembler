@@ -1,33 +1,14 @@
 # AVR-Assembler
-## Blinking an LED
+## Turning on the built-in LED of an Arduino Uno / Nano
 
-```assembly
-.org  0x0000
-rjmp  init
+```asm
+.org  0x0000 ; When being reset
+rjmp  init ; Jump to label 'init'
 
 init:
-sbi 0x04, 5 ; pinMode(13, OUTPUT)
+  sbi 0x04, 5 ; pinMode(13, OUTPUT)
+  sbi 0x05, 5 ; digitalWrite(13, HIGH)
 
 loop:
-ldi  r16, 82
-ldi  r17, 43
-ldi  r18, 0
-sbi 0x05, 5
-rcall delay_1000ms
-ldi  r16, 82
-ldi  r17, 43
-ldi  r18, 0
-cbi 0x05, 5
-rcall delay_1000ms
-rjmp loop
-
-delay_1000ms:
-dec  r18
-brne delay_1000ms
-dec  r17
-brne delay_1000ms
-dec  r16
-brne delay_1000ms
-ret
-
+  rjmp loop ; Jump to label 'loop' - infinite cycle
 ```
