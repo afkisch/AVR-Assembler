@@ -2,6 +2,8 @@
 ## Why would you need it?
 Of course, the built-in functions of the Arduino IDE are ok for hobby applications. However, even the most basic funcitons such as `digitalWrite()` or `delay()` have some **known issues**. This can be a problem when designing (time-)critical embedded systems. In order to evade these issues we can directly manipulate the registers of the Arduino.
 
+With the following 5 small projects I´d like to give you a small introduction into the AVR Assembly programming.
+
 ## 1. Turning on the built-in LED of an Arduino Uno / Nano
 
 ### Choose the corresponding port number
@@ -15,11 +17,17 @@ According to the datasheet of the Atmega 328P the pin numbers and the correspond
 The bulit-in LED of an Uno is connected to **D13** --> **PB5**
 
 ### Set data direction
-In order to set a pin as output, you have to set the corresponding **D**ata **D**irection **R**egister to 1.
+In order to set a pin as output, we have to set the corresponding bit of the **D**ata **D**irection **R**egister to 1.
 
 | Bit || 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DDRB `0x04` || DDB7 | DDB6 | DDB5 | DDB4 | DDB3 | DDB2 | DDB1 | DDB0 |
+| DDRB `0x04` || DDB7 | DDB6 | **DDB5** | DDB4 | DDB3 | DDB2 | DDB1 | DDB0 |
+
+Setting the 5th bit of **DDRB** (address `0x04`) using the `sbi` command:
+
+```asm
+sbi 0x04, 5
+```
 
 | Bit || 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
