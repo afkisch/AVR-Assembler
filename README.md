@@ -2,7 +2,7 @@
 ## Why would you need it?
 Of course, the built-in functions of the Arduino IDE are ok for hobby applications. However, even the most basic funcitons such as `digitalWrite()` or `delay()` have some **known issues**. This can be a problem when designing (time-)critical embedded systems. In order to evade these issues we can directly manipulate the registers of the Arduino.
 
-With the following 5 small projects I´d like to give you a small introduction into the AVR Assembly programming.
+With the following 5 small projects I'd like to give you a small introduction into the AVR Assembly programming.
 
 ## 1. Turning on the built-in LED of an Arduino Uno / Nano
 
@@ -28,11 +28,16 @@ Setting the 5th bit of **DDRB** (address `0x04`) using the `sbi` command:
 ```asm
 sbi 0x04, 5
 ```
+### Set output high
+We can do that by setting the corresponding bit of the **Port** **B** Data Register to 1.
 
 | Bit || 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| PORTB `0x05` || PORTB7 | PORTB6 | PORTB5 | PORTB4 | PORTB3 | PORTB2 | PORTB1 | PORTB0 |
+| PORTB `0x05` || PORTB7 | PORTB6 | **PORTB5** | PORTB4 | PORTB3 | PORTB2 | PORTB1 | PORTB0 |
 
+```asm
+sbi 0x05, 5
+```
 
 ```asm
 .org  0x0000 ; When being reset
