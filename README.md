@@ -1,6 +1,7 @@
 # AVR-Assembler
 ## Why would you need it?
-Of course, the built-in functions of the Arduino IDE are ok for hobby applications. However, even the most basic funcitons such as `digitalWrite()` or `delay()` have some **known issues**. This can be a problem when designing (time-)critical embedded systems.
+Of course, the built-in functions of the Arduino IDE are ok for hobby applications. However, even the most basic funcitons such as `digitalWrite()` or `delay()` have some **known issues**. This can be a problem when designing (time-)critical embedded systems. In order to evade these issues we can directly manipulate the registers of the Arduino.
+
 ## 1. Turning on the built-in LED of an Arduino Uno / Nano
 
 ### Choose the corresponding port number
@@ -24,9 +25,6 @@ In order to set a pin as output, you have to set the corresponding **D**ata **D*
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | PORTB `0x05` || PORTB7 | PORTB6 | PORTB5 | PORTB4 | PORTB3 | PORTB2 | PORTB1 | PORTB0 |
 
-<img src="https://user-images.githubusercontent.com/104489999/235291810-aaa8cb3b-6068-4e17-9a9f-f8b78f9b096a.png" width="600">
-
-<img src="https://user-images.githubusercontent.com/104489999/235291737-7467ea2d-c61a-4b67-9c6f-5dc2c35a629e.PNG" width="600">
 
 ```asm
 .org  0x0000 ; When being reset
