@@ -1,6 +1,6 @@
 # AVR-Assembler
 ## Why would you need it?
-Of course, the 
+Of course, the built-in functions of the Arduino IDE are ok for hobby applications. However, even the most basic funcitons such as `digitalWrite()` or `delay()` have some **known issues**. This can be a problem when designing (time-)critical embedded systems.
 ## 1. Turning on the built-in LED of an Arduino Uno / Nano
 
 ### Choose the corresponding port number
