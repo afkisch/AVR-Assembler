@@ -11,6 +11,9 @@ In order to set a pin as output, you have to set the corresponding **D**ata **D*
 | DDRB 0x04 || DDB7 | DDB6 | DDB5 | DDB4 | DDB3 | DDB2 | DDB1 | DDB0 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
+| PORTB 0x03 || PORTB7 | PORTB6 | PORTB5 | PORTB4 | PORTB3 | PORTB2 | PORTB1 | PORTB0 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
 <img src="https://user-images.githubusercontent.com/104489999/235291810-aaa8cb3b-6068-4e17-9a9f-f8b78f9b096a.png" width="600">
 
 <img src="https://user-images.githubusercontent.com/104489999/235291737-7467ea2d-c61a-4b67-9c6f-5dc2c35a629e.PNG" width="600">
