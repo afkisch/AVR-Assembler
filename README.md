@@ -1,12 +1,20 @@
 # AVR-Assembler
-## Turning on the built-in LED of an Arduino Uno / Nano
-### Set data direction
-In order to set a pin as output, you have to set the corresponding **D**ata **D**irection **R**egister to 1.
+## Why would you need it?
+Of course, the 
+## 1. Turning on the built-in LED of an Arduino Uno / Nano
 
+### Choose the corresponding port number
+
+According to the datasheet of the Atmega 328P the pin numbers and the corresponding port numbers are the following:
 
 | D0 | D1 | D2 | D3 | D4 | D5 | D6 | D7 | D8 | D9 | D10 | D11 | D12 | D13 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7 | PB0 | PB1 | PB2 | PB3 | PB4 | PB5 |
+| PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7 | PB0 | PB1 | PB2 | PB3 | PB4 | **PB5** |
+
+The bulit-in LED of an Uno is connected to **D13** --> **PB5**
+
+### Set data direction
+In order to set a pin as output, you have to set the corresponding **D**ata **D**irection **R**egister to 1.
 
 | Bit || 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
