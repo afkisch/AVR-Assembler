@@ -3,22 +3,10 @@
 ### Set data direction
 In order to set a pin as output, you have to set the corresponding **D**ata **D**irection **R**egister to 1.
 
-| Pin | Port |
-| --- | ---- |
-| D0 | PD0 |
-| D1 | PD1 |
-| D2 | PD2 |
-| D3 | PD3 |
-| D4 | PD4 |
-| D5 | PD5 |
-| D6 | PD6 |
-| D7 | PD7 |
-| D8 | PB0 |
-| D9 | PB1 |
-| D10 | PB2 |
-| D11 | PB3 |
-| D12 | PB4 |
-| D13 | PB5 |
+
+| D0 | D1 | D2 | D3 | D4 | D5 | D6 | D7 | D8 | D9 | D10 | D11 | D12 | D13 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| PD0 | PD1 | PD2 | PD3 | PD4 | PD5 | PD6 | PD7 | PB0 | PB1 | PB2 | PB3 | PB4 | PB5 |
 
 <img src="https://user-images.githubusercontent.com/104489999/235291810-aaa8cb3b-6068-4e17-9a9f-f8b78f9b096a.png" width="600">
 
