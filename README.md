@@ -48,5 +48,14 @@ init:
   sbi 0x05, 5 ; digitalWrite(13, HIGH)
 
 loop:
-  rjmp loop ; Jump to label 'loop' - infinite cycle
+  rjmp loop ; Relative jump to label 'loop' - infinite cycle
 ```
+
+## 2. Blinking an LED
+
+In order to make the LED blink, we have to turn it on and off periodically. In the following example we're gonna be producing a 0,5 Hz squarewave signal with a duty-cycle of 50 %. It means that the LED has to be on for 1 second and then off for another sec.
+
+### Software delay
+
+The easiest way to implement a delay function in AVR Assembler is to **do nothing**.
+There is a special function for this task: `nop` (`mov r0, r0` could also be used). It delays 1 cycle (62.5 ns at 16 MHz). In order to make 
