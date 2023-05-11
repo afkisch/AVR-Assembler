@@ -58,4 +58,4 @@ In order to make the LED blink, we have to turn it on and off periodically. In t
 ### Software delay
 
 The easiest way to implement a delay function in AVR Assembler is to **do nothing**.
-There is a special function for this task: `nop` (`mov r0, r0` could also be used). It delays 1 cycle (62.5 ns at 16 MHz). In order to make 
+There is a special function for this task: `nop` (`mov r0, r0` could also be used). It delays 1 cycle (62.5 ns at 16 MHz). In order to make a 1 second delay it had to be repeated 16 million times. A popular solution for this problem is the using of nested loops. Fortunately, there's a tool for designing such functions. http://darcy.rsgc.on.ca/ACES/TEI4M/AVRdelay.html
